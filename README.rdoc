@@ -1,0 +1,16 @@
+== Example
+
+  class RenderError < StandardError; end
+
+  begin
+    unknown_method
+  rescue Exception => exception
+    # Raises RenderError exception preserving the NameError backtrace.
+    raise exception.to_exception(RenderError)
+  end
+
+== Credits
+
+Carlos Paramio
+
+http://carlosparamio.com
